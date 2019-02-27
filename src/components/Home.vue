@@ -3,15 +3,15 @@
     <v-content>
       <section>
         <v-parallax :src="getImage('blue-sky.jpg')" height="700">
-          <v-layout column align-center justify-center class="black--text">
+          <v-layout column align-center justify-center class="white--text">
             <img src="../assets/logo.svg" alt="Vuetify.js" height="200">
-            <h1 class="mb-2 display-1 text-xs-center">
+            <h1 class="mb-2 display-1 text-xs-center blue-background">
               Em busca do emprego ideal?
             </h1>
-            <div class="subheading mb-3 text-xs-center">
+            <div class="subheading mb-3 text-xs-center blue-background">
               Faça o quiz e encontre
             </div>
-            <v-btn class="blue lighten-2 mt-5" large>
+            <v-btn class="mt-5" large dark outline @click="pushRoute('quizz')">
               Iniciar o Quizz
             </v-btn>
           </v-layout>
@@ -87,14 +87,16 @@
       <section>
         <v-parallax :src="getImage('blue-sky.jpg')" height="380">
           <v-layout column align-center justify-center>
-            <div class="headline white--text mb-3 text-xs-center">
+            <div class="headline white--text mb-3 text-xs-center blue-background">
               Encontrar o emprego ideal nunca foi tão fácil
             </div>
-            <em class="white--text">Faça o quizz agora</em>
+            <em class="white--text blue-background">Faça o quizz agora</em>
             <v-btn
-              class="blue lighten-2 mt-5"
+              class="mt-5"
               dark
               large
+              outline
+               @click="pushRoute('quizz')"
             >
               Iniciar o Quizz
             </v-btn>
@@ -154,7 +156,7 @@
         </v-container>
       </section>
 
-      <v-footer class="blue darken-2">
+      <v-footer class="blue darken-1">
         <v-layout row wrap align-center>
           <v-flex xs12>
             <div class="white--text ml-3">
@@ -180,11 +182,17 @@ export default {
   methods: {
     getImage (path) {
       return require(`../assets/${path}`)
+    },
+    pushRoute(path) {
+      this.$router.push(path)
     }
   }
 }
 </script>
 
 <style>
-
+.blue-background {
+  background-color: #64b5f6;
+  padding: 3px;
+}
 </style>
