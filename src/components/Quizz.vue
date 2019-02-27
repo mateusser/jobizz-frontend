@@ -31,7 +31,7 @@
                       :key="idxA"
                     >
                       <v-hover>
-                        <v-card 
+                        <v-card
                           slot-scope="{ hover }"
                           class="mx-auto"
                           :class="`elevation-${hover ? 12 : 2}`"
@@ -102,123 +102,123 @@ export default {
         array[i] = t
       }
 
-      return array;
+      return array
     }
   },
   created () {
     const questions = [
       {
         question: {
-          text: "pergunta 1?",
+          text: 'pergunta 1?',
           value: 1
         },
         options: [
           {
-            text: "resposta 1",
+            text: 'resposta 1',
             value: 1
           },
           {
-            text: "resposta 2",
+            text: 'resposta 2',
             value: 2
           },
           {
-            text: "resposta 3",
+            text: 'resposta 3',
             value: 3
           },
           {
-            text: "resposta 4",
+            text: 'resposta 4',
             value: 4
           }]
       },
       {
         question: {
-          text: "pergunta 2?",
+          text: 'pergunta 2?',
           value: 2
         },
         options: [
           {
-            text: "resposta 1",
+            text: 'resposta 1',
             value: 1
           },
           {
-            text: "resposta 2",
+            text: 'resposta 2',
             value: 2
           },
           {
-            text: "resposta 3",
+            text: 'resposta 3',
             value: 3
           },
           {
-            text: "resposta 4",
+            text: 'resposta 4',
             value: 4
           }]
       },
       {
         question: {
-          text: "pergunta 3?",
+          text: 'pergunta 3?',
           value: 3
         },
         options: [
           {
-            text: "resposta 1",
+            text: 'resposta 1',
             value: 1
           },
           {
-            text: "resposta 2",
+            text: 'resposta 2',
             value: 2
           },
           {
-            text: "resposta 3",
+            text: 'resposta 3',
             value: 3
           },
           {
-            text: "resposta 4",
+            text: 'resposta 4',
             value: 4
           }]
       },
       {
         question: {
-          text: "pergunta 4?",
+          text: 'pergunta 4?',
           value: 4
         },
         options: [
           {
-            text: "resposta 1",
+            text: 'resposta 1',
             value: 1
           },
           {
-            text: "resposta 2",
+            text: 'resposta 2',
             value: 2
           },
           {
-            text: "resposta 3",
+            text: 'resposta 3',
             value: 3
           },
           {
-            text: "resposta 4",
+            text: 'resposta 4',
             value: 4
           }]
       },
       {
         question: {
-          text: "pergunta 5?",
+          text: 'pergunta 5?',
           value: 5
         },
         options: [
           {
-            text: "resposta 1",
+            text: 'resposta 1',
             value: 1
           },
           {
-            text: "resposta 2",
+            text: 'resposta 2',
             value: 2
           },
           {
-            text: "resposta 3",
+            text: 'resposta 3',
             value: 3
           },
           {
-            text: "resposta 4",
+            text: 'resposta 4',
             value: 4
           }]
       }

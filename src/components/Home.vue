@@ -4,7 +4,8 @@
       <section>
         <v-parallax :src="getImage('blue-sky.jpg')" height="700">
           <v-layout column align-center justify-center class="white--text">
-            <img src="../assets/logo.svg" alt="Vuetify.js" height="200">
+            <img src="../assets/logoJ.png" class="logo" height="200">
+            <p />
             <h1 class="mb-2 display-1 text-xs-center blue-background">
               Em busca do emprego ideal?
             </h1>
@@ -26,7 +27,7 @@
                 A melhor forma de encontrar a empresa certa
               </h2>
               <span class="subheading">
-                
+
               </span>
             </div>
           </v-flex>
@@ -183,7 +184,7 @@ export default {
     getImage (path) {
       return require(`../assets/${path}`)
     },
-    pushRoute(path) {
+    pushRoute (path) {
       this.$router.push(path)
     }
   }
@@ -194,5 +195,10 @@ export default {
 .blue-background {
   background-color: #64b5f6;
   padding: 3px;
+}
+
+.logo {
+  border-radius: 100px;
+  background-color: #ffffff;
 }
 </style>
