@@ -74,7 +74,7 @@ export default {
   }),
   watch: {
     step (newVal) {
-      if (newVal > this.questions.length) this.$router.push('/')
+      if (newVal > this.questions.length) this.$router.push('/endquizz')
     }
   },
   methods: {
@@ -82,8 +82,8 @@ export default {
       return answer === value ? 'grey lighten-1' : 'white'
     },
     selectAnwer (idx, value) {
-      this.$forceUpdate()
       this.answers[idx] = value
+      this.$forceUpdate()
     },
     shuffle (array) {
       // Fisher–Yates Shuffle [https://bost.ocks.org/mike/shuffle/]
@@ -234,8 +234,5 @@ export default {
 </script>
 
 <style>
-.selected{
-  color: #000000;
-  background-color: #000000;
-}
+
 </style>
