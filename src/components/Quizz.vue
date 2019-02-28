@@ -52,6 +52,7 @@
                   <v-btn
                     color="primary"
                     @click="step++"
+                    :disabled="!answers[idxQ]"
                   >
                     OK
                   </v-btn>

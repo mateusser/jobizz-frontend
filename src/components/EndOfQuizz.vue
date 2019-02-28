@@ -80,15 +80,49 @@
           </v-card-title>
         </v-card>
       </v-flex>
-      <v-flex xs12 class="text-xs-center">
+      <v-flex xs12 class="text-xs-center" v-if="!signup">
         <span class="subheading primary--text">
           Quer se candidatar as vagas abertas?
         </span>
       </v-flex>
-      <v-flex xs12 class="text-xs-center">
-        <v-btn color="primary" dark @click="pushRoute('/signup')">
+      <v-flex xs12 class="text-xs-center" v-if="!signup">
+        <v-btn color="primary" dark @click="signup = true">
           Cadastre-se
         </v-btn>
+      </v-flex>
+    </v-layout>
+    <v-layout transition="slide-y-transition" wrap v-if="signup">
+      <v-flex xs8 offset-xs2>
+        <v-text-field
+          :rules="[rules.required]"
+          name="input-10-2"
+          label="Nome Completo"
+          class="input-group--focused"
+        ></v-text-field>
+      </v-flex>
+      <v-flex xs8 offset-xs2>
+        <v-text-field
+          :rules="[rules.required]"
+          name="input-10-2"
+          label="E-mail"
+          class="input-group--focused"
+        ></v-text-field>
+      </v-flex>
+      <v-flex xs8 offset-xs2>
+        <v-text-field
+          :append-icon="show ? 'visibility_off' : 'visibility'"
+          :rules="[rules.required, rules.min]"
+          :type="show ? 'text' : 'password'"
+          name="input-10-2"
+          label="Senha"
+          hint="No mínimo 8 caracteres"
+          class="input-group--focused"
+          @click:append="show = !show"
+        ></v-text-field>
+      </v-flex>
+      <v-flex xs4 offset-xs4>
+        <v-btn color="primary" dark block @click="signUp()"
+        >Cadastrar</v-btn>
       </v-flex>
     </v-layout>
   </v-container>
@@ -97,11 +131,20 @@
 <script>
 export default {
   data: () => ({
-    companies: []
+    companies: [],
+    rules: {
+      required: value => !!value || 'Obrigatório',
+      min: v => (v && v.length >= 8) || 'Min 8 caracteres'
+    },
+    show: false,
+    signup: false
   }),
   methods: {
     pushRoute (path) {
       this.$router.push(path)
+    },
+    signUp() {
+      console.log('yay')
     }
   },
   created () {
