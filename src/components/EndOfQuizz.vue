@@ -6,28 +6,76 @@
           Veja as empresas que mais combinam com você:
         </span>
       </v-flex>
-      <v-flex xl3 hidden-lg-and-down></v-flex>
-      <v-flex xs12 sm4 xl2
-        v-for="(c, idx) in companies"
-        :key="idx"
-      >
+      <v-flex lg2 hidden-md-and-down></v-flex>
+      <v-flex xs2 hidden-sm-and-up></v-flex>
+      <v-flex xs8 sm4 lg2>
         <v-card class="primary--text">
           <v-img
-            :src="c.logo"
-            :aspect-ratio="1" 
+            :src="companies[0].logo"
+            :aspect-ratio="1"
           ></v-img>
 
           <v-card-title primary-title>
-            <h3 class="headline mb-0"> {{ c.name }} </h3>
+            <h3 class="headline mb-0"> {{ companies[0].name }} </h3>
             <v-spacer></v-spacer>
             <v-progress-circular
               :rotate="360"
               :size="50"
               :width="5"
-              :value="c.match"
+              :value="companies[0].match"
               color="primary lighten-1"
             >
-              {{ c.match }}
+              {{ companies[0].match }}
+            </v-progress-circular>
+          </v-card-title>
+        </v-card>
+      </v-flex>
+      <v-flex lg1 hidden-md-and-down></v-flex>
+      <v-flex xs2 hidden-sm-and-up></v-flex>
+      <v-flex xs2 hidden-sm-and-up></v-flex>
+      <v-flex xs8 sm4 lg2>
+        <v-card class="primary--text">
+          <v-img
+            :src="companies[1].logo"
+            :aspect-ratio="1"
+          ></v-img>
+
+          <v-card-title primary-title>
+            <h3 class="headline mb-0"> {{ companies[1].name }} </h3>
+            <v-spacer></v-spacer>
+            <v-progress-circular
+              :rotate="360"
+              :size="50"
+              :width="5"
+              :value="companies[1].match"
+              color="primary lighten-1"
+            >
+              {{ companies[1].match }}
+            </v-progress-circular>
+          </v-card-title>
+        </v-card>
+      </v-flex>
+      <v-flex lg1 hidden-md-and-down></v-flex>
+      <v-flex xs2 hidden-sm-and-up></v-flex>
+      <v-flex xs2 hidden-sm-and-up></v-flex>
+      <v-flex xs8 sm4 lg2>
+        <v-card class="primary--text">
+          <v-img
+            :src="companies[2].logo"
+            :aspect-ratio="1"
+          ></v-img>
+
+          <v-card-title primary-title>
+            <h3 class="headline mb-0"> {{ companies[2].name }} </h3>
+            <v-spacer></v-spacer>
+            <v-progress-circular
+              :rotate="360"
+              :size="50"
+              :width="5"
+              :value="companies[2].match"
+              color="primary lighten-1"
+            >
+              {{ companies[2].match }}
             </v-progress-circular>
           </v-card-title>
         </v-card>
@@ -38,7 +86,9 @@
         </span>
       </v-flex>
       <v-flex xs12 class="text-xs-center">
-        <v-btn color="primary" dark>Cadastre-se</v-btn>
+        <v-btn color="primary" dark @click="pushRoute('/signup')">
+          Cadastre-se
+        </v-btn>
       </v-flex>
     </v-layout>
   </v-container>
@@ -49,9 +99,10 @@ export default {
   data: () => ({
     companies: []
   }),
-  watch: {
-  },
   methods: {
+    pushRoute (path) {
+      this.$router.push(path)
+    }
   },
   created () {
     this.companies = [
