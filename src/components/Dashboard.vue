@@ -12,73 +12,117 @@
 
       <v-flex xs12 sm10 md8 lg6 xl4>
         <v-list>
-          <v-list-tile @click="pushRoute(`company/${companies[0].id}`)">
-            <v-list-tile-avatar>
-              <v-avatar><img :src="companies[0].logo" /></v-avatar>
-            </v-list-tile-avatar>
+          <v-hover>
+            <v-list-tile
+              slot-scope="{ hover }"
+              @click="pushRoute(`company/${companies[0].id}`)"
+            >
+              <v-list-tile-avatar>
+                <v-avatar><img :src="companies[0].logo" /></v-avatar>
+              </v-list-tile-avatar>
 
-            <v-list-tile-content>
-              <v-list-tile-title>{{ companies[0].name }}</v-list-tile-title>
-            </v-list-tile-content>
+              <v-list-tile-content>
+                <v-list-tile-title>{{ companies[0].name }}</v-list-tile-title>
+              </v-list-tile-content>
 
-            <v-list-tile-action>
-              <v-progress-circular
-                :rotate="360"
-                :width="2"
-                :value="companies[0].match"
-                color="primary lighten-1"
-                class="match"
-              >
-                {{ companies[0].match }}
-              </v-progress-circular>
-            </v-list-tile-action>
-          </v-list-tile>
+              <v-list-tile-content>
+                <v-expand-transition>
+                  <v-list-tile-title
+                    v-if="hover"
+                    class="primary--text transition-fast-in-fast-out"
+                  > Veja as vagas </v-list-tile-title>
+                </v-expand-transition>
+              </v-list-tile-content>
 
-          <v-divider></v-divider>
-          <v-list-tile @click="pushRoute(`company/${companies[1].id}`)">
-            <v-list-tile-avatar>
-              <v-avatar><img :src="companies[1].logo" /></v-avatar>
-            </v-list-tile-avatar>
-
-            <v-list-tile-content>
-              <v-list-tile-title>{{ companies[1].name }}</v-list-tile-title>
-            </v-list-tile-content>
-
-            <v-list-tile-action>
-              <v-progress-circular
-                :rotate="360"
-                :width="2"
-                :value="companies[1].match"
-                color="primary lighten-1"
-                class="match"
-              >
-                {{ companies[1].match }}
-              </v-progress-circular>
-            </v-list-tile-action>
-          </v-list-tile>
+              <v-list-tile-action>
+                <v-progress-circular
+                  :rotate="360"
+                  :width="2"
+                  :value="companies[0].match"
+                  color="primary lighten-1"
+                  class="match"
+                >
+                  {{ companies[0].match }}
+                </v-progress-circular>
+              </v-list-tile-action>
+            </v-list-tile>
+          </v-hover>
 
           <v-divider></v-divider>
-          <v-list-tile @click="pushRoute(`company/${companies[2].id}`)">
-            <v-list-tile-avatar>
-              <v-avatar><img :src="companies[2].logo" /></v-avatar>
-            </v-list-tile-avatar>
 
-            <v-list-tile-content>
-              <v-list-tile-title>{{ companies[2].name }}</v-list-tile-title>
-            </v-list-tile-content>
+          <v-hover>
+            <v-list-tile
+              slot-scope="{ hover }"
+              @click="pushRoute(`company/${companies[1].id}`)"
+            >
+              <v-list-tile-avatar>
+                <v-avatar><img :src="companies[1].logo" /></v-avatar>
+              </v-list-tile-avatar>
 
-            <v-list-tile-action>
-              <v-progress-circular
-                :rotate="360"
-                :width="2"
-                :value="companies[2].match"
-                color="primary lighten-1"
-                class="match"
-              >
-                {{ companies[2].match }}
-              </v-progress-circular>
-            </v-list-tile-action>
-          </v-list-tile>
+              <v-list-tile-content>
+                <v-list-tile-title>{{ companies[1].name }}</v-list-tile-title>
+              </v-list-tile-content>
+
+              <v-list-tile-content>
+                <v-expand-transition>
+                  <v-list-tile-title
+                    v-if="hover"
+                    class="primary--text transition-fast-in-fast-out"
+                  > Veja as vagas </v-list-tile-title>
+                </v-expand-transition>
+              </v-list-tile-content>
+
+              <v-list-tile-action>
+                <v-progress-circular
+                  :rotate="360"
+                  :width="2"
+                  :value="companies[1].match"
+                  color="primary lighten-1"
+                  class="match"
+                >
+                  {{ companies[1].match }}
+                </v-progress-circular>
+              </v-list-tile-action>
+            </v-list-tile>
+          </v-hover>
+
+          <v-divider></v-divider>
+
+          <v-hover>
+            <v-list-tile
+              slot-scope="{ hover }"
+              @click="pushRoute(`company/${companies[2].id}`)"
+            >
+              <v-list-tile-avatar>
+                <v-avatar><img :src="companies[2].logo" /></v-avatar>
+              </v-list-tile-avatar>
+
+              <v-list-tile-content>
+                <v-list-tile-title>{{ companies[2].name }}</v-list-tile-title>
+              </v-list-tile-content>
+
+                <v-list-tile-content>
+                  <v-expand-transition>
+                    <v-list-tile-title
+                      v-if="hover"
+                      class="primary--text transition-fast-in-fast-out"
+                    > Veja as vagas </v-list-tile-title>
+                  </v-expand-transition>
+                </v-list-tile-content>
+
+              <v-list-tile-action>
+                <v-progress-circular
+                  :rotate="360"
+                  :width="2"
+                  :value="companies[2].match"
+                  color="primary lighten-1"
+                  class="match"
+                >
+                  {{ companies[2].match }}
+                </v-progress-circular>
+              </v-list-tile-action>
+            </v-list-tile>
+          </v-hover>
 
           <v-divider></v-divider>
         </v-list>
