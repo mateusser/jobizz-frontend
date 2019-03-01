@@ -110,116 +110,116 @@ export default {
     const questions = [
       {
         question: {
-          text: 'pergunta 1?',
+          text: 'Qual seu nível de formação?',
           value: 1
         },
         options: [
           {
-            text: 'resposta 1',
+            text: 'Ensino médio',
             value: 1
           },
           {
-            text: 'resposta 2',
+            text: 'Graduado',
             value: 2
           },
           {
-            text: 'resposta 3',
+            text: 'Mestre',
             value: 3
           },
           {
-            text: 'resposta 4',
+            text: 'Doutor',
             value: 4
           }]
       },
       {
         question: {
-          text: 'pergunta 2?',
+          text: 'Qual palavra melhor te descreve??',
           value: 2
         },
         options: [
           {
-            text: 'resposta 1',
+            text: 'Objetivo',
             value: 1
           },
           {
-            text: 'resposta 2',
+            text: 'Criativo',
             value: 2
           },
           {
-            text: 'resposta 3',
+            text: 'Argumentativo',
             value: 3
           },
           {
-            text: 'resposta 4',
+            text: 'Concentrado',
             value: 4
           }]
       },
       {
         question: {
-          text: 'pergunta 3?',
+          text: 'Qual palavra que mais te incomoda:?',
           value: 3
         },
         options: [
           {
-            text: 'resposta 1',
+            text: 'Desistência',
             value: 1
           },
           {
-            text: 'resposta 2',
+            text: 'Erro',
             value: 2
           },
           {
-            text: 'resposta 3',
+            text: 'Bagunça',
             value: 3
           },
           {
-            text: 'resposta 4',
+            text: 'Dúvida',
             value: 4
           }]
       },
       {
         question: {
-          text: 'pergunta 4?',
+          text: 'Qual ambiente te faz se sentir em casa ?',
           value: 4
         },
         options: [
           {
-            text: 'resposta 1',
+            text: 'Biblioteca',
             value: 1
           },
           {
-            text: 'resposta 2',
+            text: 'Escritório',
             value: 2
           },
           {
-            text: 'resposta 3',
+            text: 'Sala de Aula',
             value: 3
           },
           {
-            text: 'resposta 4',
+            text: 'Salas de coworking',
             value: 4
           }]
       },
       {
         question: {
-          text: 'pergunta 5?',
+          text: 'Nas decisões você é mais:',
           value: 5
         },
         options: [
           {
-            text: 'resposta 1',
+            text: 'Se baseia na intuição',
             value: 1
           },
           {
-            text: 'resposta 2',
+            text: 'Busca maneiras de agradar a todos',
             value: 2
           },
           {
-            text: 'resposta 3',
+            text: 'É objetivo e busca praticidade',
             value: 3
           },
           {
-            text: 'resposta 4',
+            text: 'Se baseia somente em dados',
             value: 4
           }]
       }
