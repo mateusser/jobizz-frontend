@@ -74,7 +74,7 @@ export default new Vuex.Store({
   },
   getters: {
     getCompanies: state => state.companies,
-    getCompaniesById: state => id => state.companies.find(c => c.id === id),
+    getCompanyById: state => id => state.companies.find(c => c.id === id),
     getUser: state => state.user,
     isUserLogged: state => state.isUserLogged
   }
