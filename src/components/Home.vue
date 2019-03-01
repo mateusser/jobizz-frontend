@@ -60,7 +60,7 @@
                     </v-card-title>
                     <v-card-text>
                       Com alguns testes descubra qual a melhor vaga para você. Sejam eles de interesse, de área ou de uma
-                      vaga específica. 
+                      vaga específica.
                     </v-card-text>
                   </v-card>
                 </v-flex>
