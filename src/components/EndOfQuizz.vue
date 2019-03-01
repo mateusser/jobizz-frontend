@@ -98,6 +98,7 @@
           name="input-10-2"
           label="Nome Completo"
           class="input-group--focused"
+          v-model="user.name"
         ></v-text-field>
       </v-flex>
       <v-flex xs8 offset-xs2>
@@ -106,6 +107,7 @@
           name="input-10-2"
           label="E-mail"
           class="input-group--focused"
+          v-model="user.email"
         ></v-text-field>
       </v-flex>
       <v-flex xs8 offset-xs2>
@@ -118,11 +120,15 @@
           hint="No mínimo 8 caracteres"
           class="input-group--focused"
           @click:append="show = !show"
+          v-model="user.password"
         ></v-text-field>
       </v-flex>
       <v-flex xs4 offset-xs4>
-        <v-btn color="primary" dark block @click="signUp()"
-        >Cadastrar</v-btn>
+        <v-btn
+          color="primary" block
+          @click="signUp()"
+          :disabled="disableSignUp"
+        > Cadastrar </v-btn>
       </v-flex>
     </v-layout>
   </v-container>
@@ -137,34 +143,31 @@ export default {
       min: v => (v && v.length >= 8) || 'Min 8 caracteres'
     },
     show: false,
-    signup: false
+    signup: false,
+    user: {
+      name: '',
+      email: '',
+      password: ''
+    }
   }),
+  computed: {
+    disableSignUp () {
+      return this.user.name === '' ||
+        this.user.email === '' ||
+        this.user.password.length < 8
+    }
+  },
   methods: {
     pushRoute (path) {
       this.$router.push(path)
     },
     signUp () {
-      console.log('yay')
+      this.$store.commit('registerUser', this.user)
+      console.log(this.$store.getters.getUser)
     }
   },
   created () {
-    this.companies = [
-      {
-        name: 'Monitora',
-        match: 90 + Math.floor(Math.random() * 10),
-        logo: 'https://scontent.faqa4-1.fna.fbcdn.net/v/t1.0-9/28168049_1209425969193725_1882268841986197687_n.jpg?_nc_cat=104&_nc_ht=scontent.faqa4-1.fna&oh=1e735b549ae025102c5e53ee54b8fa83&oe=5CED02F5'
-      },
-      {
-        name: 'Amazon',
-        match: 80 + Math.floor(Math.random() * 10),
-        logo: 'https://www.fineprintart.com/images/blog/amazon-logo/amazon_logo_history_5.jpg'
-      },
-      {
-        name: 'Google',
-        match: 70 + Math.floor(Math.random() * 10),
-        logo: 'https://cdn4.iconfinder.com/data/icons/new-google-logo-2015/400/new-google-favicon-512.png'
-      }
-    ]
+    this.companies = this.$store.getters.getCompanies
   }
 }
 </script>
