@@ -30,7 +30,7 @@
       <v-flex xs12>
         <h3 class="headline text-xs-center"> Vagas abertas </h3>
       </v-flex>
-      
+
       <v-flex xs10 offset-xs1>
         <v-expansion-panel>
           <v-expansion-panel-content
@@ -44,7 +44,7 @@
               <v-card-text class="body-2"
               > Requisitos </v-card-text>
               <v-card-text
-                v-html="job.skills.replace(/\;/g, ';<br />')"
+                v-html="job.skills.replace(/;/g, ';<br />')"
               ></v-card-text>
               <v-card-actions>
                 <v-spacer></v-spacer>
@@ -74,6 +74,9 @@ export default {
     toHtml (str) {
       return str.replace(/\;/g, ',<br />')
     }
+  },
+  created () {
+    if (!this.$store.getters.isUserLogged) this.$router.push('/')
   }
 }
 </script>

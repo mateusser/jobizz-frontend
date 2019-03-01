@@ -65,6 +65,14 @@ export default new Vuex.Store({
     registerUser (state, user) {
       state.user = Object.assign({ ...user })
       state.isUserLogged = true
+    },
+    logIn (state) {
+      // state.user = {}
+      state.isUserLogged = true
+    },
+    logOut (state) {
+      state.user = {}
+      state.isUserLogged = false
     }
   },
   actions: {
