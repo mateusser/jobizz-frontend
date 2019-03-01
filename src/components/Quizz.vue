@@ -133,7 +133,7 @@ export default {
       },
       {
         question: {
-          text: 'Qual palavra melhor te descreve??',
+          text: 'Qual palavra melhor te descreve?',
           value: 2
         },
         options: [
@@ -156,7 +156,7 @@ export default {
       },
       {
         question: {
-          text: 'Qual palavra que mais te incomoda:?',
+          text: 'Qual palavra que mais te incomoda?',
           value: 3
         },
         options: [
@@ -179,7 +179,7 @@ export default {
       },
       {
         question: {
-          text: 'Qual ambiente te faz se sentir em casa ?',
+          text: 'Qual ambiente te faz se sentir em casa?',
           value: 4
         },
         options: [
@@ -202,7 +202,7 @@ export default {
       },
       {
         question: {
-          text: 'Nas decisões você é mais:',
+          text: 'Nas decisões você é mais?',
           value: 5
         },
         options: [
