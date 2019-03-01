@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './components/Home.vue'
 import Quizz from './components/Quizz.vue'
 import EndOfQuizz from './components/EndOfQuizz.vue'
+import Company from './components/Company.vue'
 
 Vue.use(Router)
 
@@ -22,6 +23,11 @@ export default new Router({
       path: '/endquizz',
       name: 'endquizz',
       component: EndOfQuizz
+    },
+    {
+      path: '/company',
+      name: 'company',
+      component: Company
     },
     {
       path: '*',

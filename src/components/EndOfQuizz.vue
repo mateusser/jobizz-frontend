@@ -143,7 +143,7 @@ export default {
     pushRoute (path) {
       this.$router.push(path)
     },
-    signUp() {
+    signUp () {
       console.log('yay')
     }
   },
