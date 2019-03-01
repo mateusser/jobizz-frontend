@@ -113,9 +113,8 @@
                   <div class="headline">Sobre nós </div>
                 </v-card-title>
                 <v-card-text>
-                  Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.
-                  Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                  Nullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt. Suspendisse potenti.
+                  Somos uma plataforma facilitadora e provedora de conexão entre empresas e colaboradores. Nossa idéia surgiu
+                  no Monitora Summer 2019.
                 </v-card-text>
               </v-card>
             </v-flex>
