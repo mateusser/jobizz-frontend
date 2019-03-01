@@ -80,8 +80,8 @@
           </v-card-title>
         </v-card>
       </v-flex>
-      <v-flex xs12 class="text-xs-center" v-if="!signup">
-        <span class="subheading primary--text">
+      <v-flex xs12 class="text-xs-center">
+        <span class="subheading primary--text" v-if="!signup">
           Quer se candidatar as vagas abertas?
         </span>
       </v-flex>
