@@ -30,7 +30,7 @@
       <v-flex xs12>
         <h3 class="headline text-xs-center"> Vagas abertas </h3>
       </v-flex>
-      
+
       <v-flex xs10 offset-xs1>
         <v-expansion-panel>
           <v-expansion-panel-content
@@ -44,7 +44,7 @@
               <v-card-text class="body-2"
               > Requisitos </v-card-text>
               <v-card-text
-                v-html="job.skills.replace(/\;/g, ';<br />')"
+                v-html="job.skills.replace(/;/g, ';<br />')"
               ></v-card-text>
               <v-card-actions>
                 <v-spacer></v-spacer>
@@ -60,34 +60,23 @@
 
 <script>
 export default {
+  props: {
+    id: String
+  },
   data: () => ({
-    company: {}
   }),
+  computed: {
+    company () {
+      return this.$store.getters.getCompanyById(Number(this.id))
+    }
+  },
   methods: {
     toHtml (str) {
       return str.replace(/\;/g, ',<br />')
     }
   },
   created () {
-    this.company = {
-      name: 'Monitora',
-      match: 90 + Math.floor(Math.random() * 10),
-      logo: 'https://scontent.faqa4-1.fna.fbcdn.net/v/t1.0-9/28168049_1209425969193725_1882268841986197687_n.jpg?_nc_cat=104&_nc_ht=scontent.faqa4-1.fna&oh=1e735b549ae025102c5e53ee54b8fa83&oe=5CED02F5',
-      description: 'Somos apaixonados por desenvolvimento de software, e dessa maneira, valorizamos profissionais eficazes para implementar soluções digitais inovadoras e personalizadas, de forma participativa. Agilidade e inovação estão no nosso DNA. Não temos medo de mudanças. Acreditamos no potencial de crescimento do nosso time e investimos nisso. Proporcionamos aos nossos colaboradores a possibilidade de se desenvolverem cada vez mais na empresa, para que nunca deixem de evoluir na vida profissional e pessoal',
-      jobs: [
-        {
-          title: 'Full Stack Developer',
-          skills: 'Bachelor\'s degree in Computer Sciences, Computer Engineering, System Analysis or any other similar degree; Availability to work 40 hours weekly in our office in Sao Carlos;At least 1 year of experience in software development through Java or JavaScript (internship and/or research grants recipients also count as experience); Proficiency in English; Willingness to learn and grow with us.'
-        },
-        {
-          title: 'Quality Assurance Analist/QA',
-          skills: 'Is very willing to learn and apply your knowledge in a challenging and international entrepreneurial environment; Likes to ensure the quality of a software product; Appreciates ensuring great user experiences and effective problem solving approaches; And who is not scared by a constantly mutating environments; Or who is a quick learner, embracing team player willing to be part of something grand.'
-        },
-        {
-          title: 'Estágio',
-          skills: 'Possuir vínculo formal com uma Instituição de Ensino Superior; Disponibilidade de pelo menos 30 horas semanais para estágio; Inglês a partir do intermediário; Muita vontade de aprender e crescer com a gente.'
-        }]
-    }
+    if (!this.$store.getters.isUserLogged) this.$router.push('/')
   }
 }
 </script>

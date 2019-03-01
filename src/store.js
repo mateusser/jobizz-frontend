@@ -65,6 +65,14 @@ export default new Vuex.Store({
     registerUser (state, user) {
       state.user = Object.assign({ ...user })
       state.isUserLogged = true
+    },
+    logIn (state) {
+      // state.user = {}
+      state.isUserLogged = true
+    },
+    logOut (state) {
+      state.user = {}
+      state.isUserLogged = false
     }
   },
   actions: {
@@ -74,7 +82,7 @@ export default new Vuex.Store({
   },
   getters: {
     getCompanies: state => state.companies,
-    getCompaniesById: state => id => state.companies.find(c => c.id === id),
+    getCompanyById: state => id => state.companies.find(c => c.id === id),
     getUser: state => state.user,
     isUserLogged: state => state.isUserLogged
   }

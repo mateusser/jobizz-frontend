@@ -163,7 +163,7 @@ export default {
     },
     signUp () {
       this.$store.commit('registerUser', this.user)
-      console.log(this.$store.getters.getUser)
+      this.pushRoute('/dashboard')
     }
   },
   created () {
